@@ -139,6 +139,7 @@ const currentOperandTextElement = document.querySelector(`[data-current-operand]
 
 const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement)
 
+// function for when number buttons have been pressed
 numberButton.forEach(button => {
     button.addEventListener('click', () => {
         calculator.appendNumber(button.innerText)
@@ -146,6 +147,7 @@ numberButton.forEach(button => {
     })
 })
 
+// functions for when a calculation button has been pressed
 operationButton.forEach(button => {
     button.addEventListener('click', () => {
         calculator.chooseOperation(button.innerText)
@@ -153,11 +155,13 @@ operationButton.forEach(button => {
     })
 })
 
+// equal button used to calculate
 equalsButton.addEventListener('click', button => {
     calculator.compute()
     calculator.updateDisplay()
 })
 
+// all clear button function
 allClearButton.addEventListener('click', button => {
     calculator.clear()
     calculator.updateDisplay()
